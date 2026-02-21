@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaSave - Download Video & Reels Instagram HD</title>
+    
+    <script src="https://pl28757344.effectivegatecpm.com/cc/03/59/cc0359301daae86fcaadb2cc3790f6de.js"></script>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; scroll-behavior: smooth; }
+        .hero-section { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 60px 20px; text-align: center; color: white; }
+        .input-box { max-width: 700px; margin: -40px auto 0; background: white; padding: 10px; border-radius: 50px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); display: flex; align-items: center; }
+        .input-box input { flex: 1; border: none; outline: none; padding: 15px 25px; border-radius: 50px; font-size: 16px; color: #333; }
+        .btn-download { background: #dc2743; color: white; font-weight: 700; padding: 15px 40px; border-radius: 50px; border: none; cursor: pointer; transition: 0.3s; }
+        .btn-download:hover { background: #bc1888; transform: scale(1.02); }
+        #ad-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+        .ad-content { background: white; width: 100%; max-width: 350px; border-radius: 24px; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div id="ad-overlay">
+        <div class="ad-content">
+            <p class="text-[10px] text-gray-400 mb-3 uppercase tracking-widest font-bold">Iklan Sponsor</p>
+            <div class="min-h-[250px] bg-gray-50 flex items-center justify-center">
+                <script>
+                    atOptions = { 'key' : '8f3789444ef17b839ac44324ba2c61f8', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
+                </script>
+                <script src="https://www.highperformanceformat.com/8f3789444ef17b839ac44324ba2c61f8/invoke.js"></script>
+            </div>
+            <button id="close-ad" disabled class="w-full mt-4 bg-gray-200 text-gray-500 font-bold py-3 rounded-xl transition">Tutup (5s)</button>
+        </div>
+    </div>
+
+    <nav class="py-4 px-6 flex justify-between items-center border-b bg-white sticky top-0 z-50">
+        <div class="text-2xl font-black text-pink-600 italic">InstaSave</div>
+        <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-right">Instagram Downloader<br>Fast & HD</div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto mt-4 text-center overflow-hidden">
+        <script>
+            atOptions = { 'key' : '77df55fe9cd7c661a66bdc276aa4a532', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+        </script>
+        <script src="https://www.highperformanceformat.com/77df55fe9cd7c661a66bdc276aa4a532/invoke.js"></script>
+    </div>
+
+    <section class="hero-section">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight uppercase italic">Insta Video Downloader</h1>
+        <p class="text-white opacity-90 text-lg">Unduh Reels & Video Instagram tanpa aplikasi secara gratis</p>
+    </section>
+
+    <div class="px-4">
+        <form id="download-form" method="POST" action="/" class="input-box">
+            <input type="url" name="url" placeholder="Tempel link Instagram di sini..." required>
+            <button type="submit" class="btn-download hidden md:block text-sm uppercase">Download</button>
+        </form>
+        <button type="submit" form="download-form" class="w-full mt-4 btn-download md:hidden py-4 rounded-xl">DOWNLOAD</button>
+    </div>
+
+    {% if error %}
+    <div class="max-w-2xl mx-auto px-4 mt-8">
+        <div class="bg-red-50 border border-red-200 text-red-600 p-4 rounded-2xl text-center font-bold italic">
+            <i class="fa-solid fa-circle-exclamation mr-2"></i> {{ error }}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="max-w-4xl mx-auto my-10 px-4">
+        <div class="bg-gray-50 p-4 rounded-2xl border border-dashed border-gray-300">
+            <script async="async" data-cfasync="false" src="https://pl28757357.effectivegatecpm.com/60e8a68bdc19e843c5a26834ac0d349f/invoke.js"></script> 
+            <div id="container-60e8a68bdc19e843c5a26834ac0d349f"></div>
+        </div>
+    </div>
+
+    {% if result %}
+    <section id="download-result" class="max-w-4xl mx-auto px-4 py-10">
+        <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-[2rem] border-2 border-pink-50 shadow-xl">
+            <div class="w-56 h-80 bg-gray-200 rounded-3xl overflow-hidden shadow-2xl border-4 border-white shrink-0">
+                <img src="{{ result.cover }}" class="w-full h-full object-cover" alt="Preview" onerror="this.src='https://placehold.co/400x600?text=Ready+to+Download'">
+            </div>
+
+            <div class="flex-1 w-full space-y-5 text-center md:text-left">
+                <h3 class="text-2xl font-extrabold text-gray-900 italic uppercase">Video Ditemukan!</h3>
+                <div class="space-y-3">
+                    <button onclick="startAdProcess('{{ result.video }}')" class="w-full bg-pink-600 text-white py-6 rounded-2xl font-black text-xl hover:bg-pink-700 transition shadow-lg shadow-pink-100 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> SIMPAN VIDEO (HD)
+                    </button>
+                    <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest text-center md:text-left ml-2">
+                        <i class="fa-solid fa-check-double mr-1 text-green-500"></i> Video siap diunduh tanpa watermark
+                    </p>
+                </div>
+                <button onclick="location.href='/'" class="mt-4 text-pink-500 font-bold text-sm hover:underline italic">← Unduh video lain</button>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <article class="max-w-4xl mx-auto px-6 py-20 border-t mt-10">
+        <h2 class="text-3xl font-black text-gray-900 mb-6 italic">Tentang InstaSave</h2>
+        <p class="text-gray-600 leading-relaxed text-lg mb-10">
+            InstaSave adalah solusi tercepat untuk mengunduh video Instagram dan Reels dalam kualitas tinggi. Kami memastikan setiap unduhan aman, gratis, dan tanpa perlu melakukan pendaftaran akun.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-10 text-sm">
+            <div class="bg-gradient-to-br from-pink-50 to-orange-50 p-8 rounded-[2rem] border border-pink-100">
+                <h4 class="font-black text-pink-900 text-xl mb-4">Kenapa Memilih Kami?</h4>
+                <ul class="space-y-3 text-gray-700">
+                    <li><i class="fa-solid fa-bolt text-orange-500 mr-2"></i> Server download super cepat</li>
+                    <li><i class="fa-solid fa-hd text-pink-500 mr-2"></i> Kualitas HD & 4K jika tersedia</li>
+                    <li><i class="fa-solid fa-shield-heart text-red-500 mr-2"></i> 100% Aman dari Malware</li>
+                </ul>
+            </div>
+            <div class="p-8">
+                <h4 class="font-black text-gray-900 text-xl mb-4 uppercase">Cara Download:</h4>
+                <p class="text-gray-600 leading-loose">
+                    1. Buka Instagram & salin tautan video/reels.<br>
+                    2. Tempel tautan pada kolom input di atas.<br>
+                    3. Klik tombol Download dan tunggu beberapa detik.<br>
+                    4. Simpan video langsung ke galeri Anda.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-gray-900 py-12 text-center text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-2xl font-black mb-4 italic">InstaSave</div>
+            <p class="text-gray-500 text-xs mb-6 uppercase tracking-widest">© 2026 InstaSave All right reserved</p>
+            <div class="flex justify-center gap-8 border-t border-gray-800 pt-8">
+                <a href="/privacy" class="text-xs font-bold hover:text-pink-400 uppercase">Privacy Policy</a>
+                <a href="/contact" class="text-xs font-bold hover:text-pink-400 uppercase">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let videoUrl = "";
+
+        // Scroll otomatis ke hasil jika ada
+        window.onload = function() {
+            {% if result %}
+                const resultSection = document.getElementById('download-result');
+                if (resultSection) {
+                    resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            {% endif %}
+        };
+
+        // Fungsi pemicu iklan popup 5 detik
+        function startAdProcess(url) {
+            videoUrl = url;
+            document.getElementById('ad-overlay').style.display = 'flex';
+            let c = 5;
+            const t = setInterval(() => {
+                c--;
+                const closeBtn = document.getElementById('close-ad');
+                closeBtn.innerText = `Tutup (${c}s)`;
+                if(c <= 0){
+                    clearInterval(t);
+                    closeBtn.innerText = "SIMPAN SEKARANG";
+                    closeBtn.disabled = false;
+                    closeBtn.className = "w-full mt-4 bg-pink-600 text-white font-black py-4 rounded-2xl shadow-xl shadow-pink-200";
+                }
+            }, 1000);
+        }
+
+        // Jalankan download setelah iklan ditutup
+        document.getElementById('close-ad').onclick = () => {
+            document.getElementById('ad-overlay').style.display = 'none';
+            proxyDownload(videoUrl);
+        };
+
+        // Fungsi Download lewat Backend (Fix CORS)
+        function proxyDownload(u) {
+            const a = document.createElement('a');
+            a.href = '/download?url=' + encodeURIComponent(u);
+            a.download = '';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+
+    <script src="https://pl28757358.effectivegatecpm.com/74/7d/18/747d181fac7b5e52b60a2ca3a02fe842.js"></script>
+</body>
+</html>
