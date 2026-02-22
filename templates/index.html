@@ -80,7 +80,7 @@
     <section id="download-result" class="max-w-4xl mx-auto px-4 py-10">
         <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-[2rem] border-2 border-pink-50 shadow-xl">
             <div class="w-56 h-80 bg-gray-200 rounded-3xl overflow-hidden shadow-2xl border-4 border-white shrink-0">
-                <img src="{{ result.cover }}" class="w-full h-full object-cover" alt="Preview" onerror="this.src='https://placehold.co/400x600?text=Ready+to+Download'">
+                <img src="{{ result.cover if result.cover else 'https://placehold.co/400x600/f3f4f6/9ca3af?text=Ready+to+Download' }}" class="w-full h-full object-cover" alt="Preview" onerror="this.src='https://placehold.co/400x600/f3f4f6/9ca3af?text=Ready+to+Download'">
             </div>
 
             <div class="flex-1 w-full space-y-5 text-center md:text-left">
@@ -99,31 +99,65 @@
     </section>
     {% endif %}
 
-    <article class="max-w-4xl mx-auto px-6 py-20 border-t mt-10">
-        <h2 class="text-3xl font-black text-gray-900 mb-6 italic">Tentang InstaSave</h2>
-        <p class="text-gray-600 leading-relaxed text-lg mb-10">
-            InstaSave adalah solusi tercepat untuk mengunduh video Instagram dan Reels dalam kualitas tinggi. Kami memastikan setiap unduhan aman, gratis, dan tanpa perlu melakukan pendaftaran akun.
-        </p>
+    <article class="max-w-4xl mx-auto px-6 py-20">
 
-        <div class="grid md:grid-cols-2 gap-10 text-sm">
-            <div class="bg-gradient-to-br from-pink-50 to-orange-50 p-8 rounded-[2rem] border border-pink-100">
-                <h4 class="font-black text-pink-900 text-xl mb-4">Kenapa Memilih Kami?</h4>
-                <ul class="space-y-3 text-gray-700">
-                    <li><i class="fa-solid fa-bolt text-orange-500 mr-2"></i> Server download super cepat</li>
-                    <li><i class="fa-solid fa-hd text-pink-500 mr-2"></i> Kualitas HD & 4K jika tersedia</li>
-                    <li><i class="fa-solid fa-shield-heart text-red-500 mr-2"></i> 100% Aman dari Malware</li>
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-black text-gray-900 mb-4">Apa itu InstaSave?</h2>
+            <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                InstaSave adalah solusi tercepat untuk mengunduh video Instagram dan Reels dalam kualitas tinggi. Kami memastikan setiap unduhan aman, gratis, dan tanpa perlu melakukan pendaftaran akun.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start mb-20">
+            <div>
+                <h2 class="text-3xl font-black text-gray-900 mb-6">Cara Download Video Instagram?</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="bg-pink-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">1</span>
+                        <p class="text-gray-600"><strong>Salin Tautan:</strong> Buka aplikasi Instagram dan pilih video/Reels yang ingin Anda simpan. Ketuk "Bagikan" lalu "Salin Tautan".</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="bg-pink-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">2</span>
+                        <p class="text-gray-600"><strong>Tempel Tautan:</strong> Kembali ke InstaSave, tempelkan tautan ke kolom input di atas halaman ini.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="bg-pink-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">3</span>
+                        <p class="text-gray-600"><strong>Unduh:</strong> Klik tombol Download. Tunggu beberapa detik dan simpan video langsung ke galeri Anda.</p>
+                    </li>
                 </ul>
             </div>
-            <div class="p-8">
-                <h4 class="font-black text-gray-900 text-xl mb-4 uppercase">Cara Download:</h4>
-                <p class="text-gray-600 leading-loose">
-                    1. Buka Instagram & salin tautan video/reels.<br>
-                    2. Tempel tautan pada kolom input di atas.<br>
-                    3. Klik tombol Download dan tunggu beberapa detik.<br>
-                    4. Simpan video langsung ke galeri Anda.
-                </p>
+            <div class="bg-gradient-to-br from-pink-50 to-orange-50 p-8 rounded-[2rem] border border-pink-100">
+                <h4 class="font-black text-pink-900 text-xl mb-4">Fitur Utama InstaSave:</h4>
+                <ul class="space-y-3 text-gray-700">
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Kualitas HD & 4K jika tersedia.</li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Gratis tanpa batas unduhan.</li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Tidak perlu login/daftar.</li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Mendukung HP Android, iOS, & PC.</li>
+                </ul>
             </div>
         </div>
+
+        <div class="border-t pt-16">
+            <h2 class="text-center text-3xl font-black text-gray-900 mb-12">Mengapa Memilih Kami?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="text-pink-600 text-4xl mb-4"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h5 class="font-bold text-lg mb-2">Kecepatan Tinggi</h5>
+                    <p class="text-sm text-gray-500 font-medium">Server kami memproses video Instagram Anda secara instan tanpa menunggu lama.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-pink-600 text-4xl mb-4"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h5 class="font-bold text-lg mb-2">Hasil Bersih</h5>
+                    <p class="text-sm text-gray-500 font-medium">Hapus watermark yang mengganggu hanya dengan satu klik saja.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-pink-600 text-4xl mb-4"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h5 class="font-bold text-lg mb-2">User Friendly</h5>
+                    <p class="text-sm text-gray-500 font-medium">Tampilan yang bersih dan mudah digunakan oleh siapa saja, di mana saja.</p>
+                </div>
+            </div>
+        </div>
+
     </article>
 
     <footer class="bg-gray-900 py-12 text-center text-white">
