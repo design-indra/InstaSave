@@ -40,7 +40,7 @@ def get_insta_data(link):
         if isinstance(items, list) and len(items) > 0:
             item = items[0]
             video_url = item.get("media") or item.get("video_url") or item.get("url")
-            cover_url = item.get("thumbnail") or item.get("thumbnail_url") or ""
+            cover_url = item.get("thumbnail") or item.get("thumbnail_url") or "https://placehold.co/400x600?text=Ready+to+Download"
             if video_url:
                 print(f"Berhasil! URL: {video_url[:80]}")
                 return {"video": video_url, "cover": cover_url}
