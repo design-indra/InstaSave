@@ -21,7 +21,6 @@ def clean_instagram_link(link):
 def get_insta_data(link):
     clean_link = clean_instagram_link(link)
     print(f"Fetching: {clean_link}")
-
     try:
         r = requests.get(
             f"https://{RAPIDAPI_HOST}/scraper",
@@ -33,41 +32,20 @@ def get_insta_data(link):
             timeout=20
         )
         print(f"Status: {r.status_code}")
-        print(f"Response: {r.text[:500]}")
-
         data = r.json()
+        print(f"Response keys: {list(data.keys())}")
 
-        # Cari video_url di berbagai kemungkinan struktur
-        video_url = None
-        cover_url = ""
+        # Struktur: {"data": [{"media": "https://...mp4..."}]}
+        items = data.get("data", [])
+        if isinstance(items, list) and len(items) > 0:
+            item = items[0]
+            video_url = item.get("media") or item.get("video_url") or item.get("url")
+            cover_url = item.get("thumbnail") or item.get("thumbnail_url") or ""
+            if video_url:
+                print(f"Berhasil! URL: {video_url[:80]}")
+                return {"video": video_url, "cover": cover_url}
 
-        if data.get("video_url"):
-            video_url = data["video_url"]
-            cover_url = data.get("thumbnail_url") or data.get("thumbnail") or ""
-        elif data.get("data", {}).get("video_url"):
-            video_url = data["data"]["video_url"]
-            cover_url = data["data"].get("thumbnail_url") or data["data"].get("thumbnail", "")
-        elif isinstance(data.get("data"), list):
-            for item in data["data"]:
-                if item.get("video_url") or item.get("url"):
-                    video_url = item.get("video_url") or item.get("url")
-                    cover_url = item.get("thumbnail_url") or item.get("thumbnail", "")
-                    break
-        elif data.get("url"):
-            video_url = data["url"]
-            cover_url = data.get("thumbnail", "")
-        elif data.get("medias"):
-            for m in data["medias"]:
-                if m.get("url"):
-                    video_url = m["url"]
-                    cover_url = data.get("thumbnail", "")
-                    break
-
-        if video_url:
-            print(f"Berhasil! video_url: {video_url[:80]}")
-            return {"video": video_url, "cover": cover_url}
-        else:
-            print(f"video_url tidak ditemukan. Full response: {data}")
+        print(f"video_url tidak ditemukan. Data: {data}")
 
     except Exception as e:
         print(f"Error: {e}")
